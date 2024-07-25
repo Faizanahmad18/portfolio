@@ -958,6 +958,22 @@ video {
   height: 100%;
 }
 
+.h-\[62vh\] {
+  height: 62vh;
+}
+
+.h-\[52vh\] {
+  height: 52vh;
+}
+
+.h-\[65vh\] {
+  height: 65vh;
+}
+
+.h-\[67vh\] {
+  height: 67vh;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -3185,16 +3201,12 @@ body {
     width: 33.333333%;
   }
 
-  .md\:w-\[50\%\] {
-    width: 50%;
+  .md\:w-\[40\%\] {
+    width: 40%;
   }
 
   .md\:w-full {
     width: 100%;
-  }
-
-  .md\:w-\[40\%\] {
-    width: 40%;
   }
 
   .md\:flex-row {
@@ -3236,26 +3248,6 @@ body {
   .md\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
-  }
-
-  .md\:py-16 {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-
-  .md\:py-12 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-
-  .md\:py-8 {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-
-  .md\:py-4 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
   }
 
   .md\:py-6 {
