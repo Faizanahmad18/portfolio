@@ -8,9 +8,7 @@
   .bg-image1 {
     background-image: url("../asset/backgroundn.jpg");
   }
-  .bg-imageall {
-    background-image: url("../asset/newbg.png");
-  }
+
   body {
     .sphere {
       display: grid;
