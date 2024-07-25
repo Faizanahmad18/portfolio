@@ -3,13 +3,13 @@
 @tailwind utilities;
 @layer utilities {
   .bg-image {
-    background-image: url("/asset/background.jpg");
+    background-image: url("../asset/background.jpg");
   }
   .bg-image1 {
-    background-image: url("/asset/backgroundn.jpg");
+    background-image: url("../asset/backgroundn.jpg");
   }
   .bg-imageall {
-    background-image: url("/asset/newbg.png");
+    background-image: url("../asset/newbg.png");
   }
   body {
     .sphere {
