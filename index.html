@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./src/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kalam:wght@300;400;700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <style>
+      *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+      body {
+  font-family: "kalam", cursive;
+  background-color: rgb(0, 0, 0);
+  background: #000000; height:100%;overflow-x: hidden;}	
+  .text{color:rgb(20, 10, 10);font-size:220px;text-align:center;}
+  .open{color:rgb(0, 0, 0);background:#000;padding:10px;border-radius:20px;}
+  /* Preloader */
+.container-preloader {
+	align-items:center; cursor:none; display:flex; height:100%;
+  justify-content:center; position:fixed; left:0; top:0; width:100%; z-index:900;
+}
+.container-preloader .animation-preloader {
+	position:absolute; z-index: 100;}
+/* Spinner Loading */
+.container-preloader .animation-preloader .spinner {
+  animation: spinner 1s infinite linear;
+	border-radius: 50%;  border: 10px solid rgba(0, 0, 0, 0.236);
+  border-top-color: rgb(138, 13, 38); /* It is not in alphabetical order so that you do not overwrite it */
+  height: 9em;  margin: 0 auto 3.5em auto; width: 9em;
+}
+/* Loading text */
+.container-preloader .animation-preloader .txt-loading {
+  font: bold 5em 'Montserrat', sans-serif;
+	text-align: center;	user-select: none;
+}
+.container-preloader .animation-preloader .txt-loading .characters:before {
+  animation: characters 8s infinite;  color: rgb(101, 224, 230);
+  content: attr(preloader-text);  left: 0;
+  opacity: 0;  position: absolute;  top: 0;
+  transform: rotateY(-90deg);
+}
+.container-preloader .animation-preloader .txt-loading .characters {
+	color: rgba(0, 0, 0, 0.2);	position: relative;
+}
+.container-preloader .animation-preloader .txt-loading .characters:nth-child(2):before {
+  animation-delay: 0.2s;
+}
+.container-preloader .animation-preloader .txt-loading .characters:nth-child(3):before {
+  animation-delay: 0.4s;
+}
+.container-preloader .animation-preloader .txt-loading .characters:nth-child(4):before {
+  animation-delay: 0.6s;
+}
+.container-preloader .animation-preloader .txt-loading .characters:nth-child(5):before {
+  animation-delay: 0.8s;
+}
+.container-preloader .animation-preloader .txt-loading .characters:nth-child(6):before {
+  animation-delay: 1s;
+}
+.container-preloader .animation-preloader .txt-loading .characters:nth-child(7):before {
+  animation-delay: 1.2s;
+}
+.container-preloader .loader-section {
+  background-color: #000000;  height: 100%;
+  position: fixed;  top: 0;  width: calc(50% + 1px);
+}
+.container-preloader .loader-section.section-left {
+  left: 0;
+}
+.container-preloader .loader-section.section-right {
+  right: 0;
+}
+/* Fade effect on loading animation */
+.loaded .animation-preloader {
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+/* Curtain effect */
+.loaded .loader-section.section-left {
+  transform: translateX(-101%);
+  transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1.000);
+}
+.loaded .loader-section.section-right {
+  transform: translateX(101%);
+  transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1.000);
+}
+/* Animation of the preloader */
+@keyframes spinner {
+to {
+	transform: rotateZ(360deg);
+}}
+/* Animation of letters loading from the preloader */
+@keyframes characters {
+  0%,
+  75%,
+  100% {
+ opacity: 0;
+ transform: rotateY(-90deg);
+  }
+  25%,
+  50% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }}
+/* Laptop size back (laptop, tablet, cell phone) */
+@media screen and (max-width: 767px) {
+	/* Preloader */
+	/* Spinner Loading */	
+	.container-preloader .animation-preloader .spinner {
+	height: 8em;
+	width: 8em;
+	}
+	/* Text Loading */
+	.container-preloader .animation-preloader .txt-loading {
+	  font: bold 3.5em 'Montserrat', sans-serif;
+	}}
+@media screen and (max-width: 500px) {
+	/* Prelaoder */
+	/* Spinner Loading */
+	.container-preloader .animation-preloader .spinner {
+	height: 7em;
+	width: 7em;
+	}
+	/*Loading text */
+	.container-preloader .animation-preloader .txt-loading {
+	  font: bold 2em 'Montserrat', sans-serif;
+	}}
+.origin{text-decoration:none;
+font-size:45px;}
+.section3 {
+  width: 100vw;
+
+  margin: 0;
+
+}
+.wrapper {
+  width: 100vw;
+  margin: 0 auto;
+  height: 400px;
+  background-color: #161616;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    height: 700px;
+  }
+}
+.content {
+  max-width: 1024px;
+  width: 100%;
+  
+ 
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .content {
+   
+    flex-direction: column;
+  }
+}
+.card {
+  width: 100%;
+  max-width: 300px;
+  min-width: 200px;
+  height: 250px;
+  background-color: #232323;
+  margin: 13px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(251, 249, 249, 0.944);
+  border: 2px solid rgba(7, 7, 7, 0.12);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.icon {
+  margin: 0 auto;
+  width: 100%;
+  height: 80px;
+  max-width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(231, 24, 24);
+  transition: all 0.8s ease;
+
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.card .title {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.card .text {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  font-weight: 200;
+  letter-spacing: 2px;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  height: 400px;
+}
+
+.card:hover .info {
+  height: 90%;
+}
+
+.card:hover .text {
+  transition: all 0.3s ease;
+  opacity: 1;
+  max-height: 50px;
+}
+
+.card:hover .icon {
+  background-position: -120px;
+  transition: all 0.3s ease;
+}
+   /* Wrapper */
+   .wrappers {
+      
+      max-width: 900px;
+      margin: 3em auto;
+      text-align: center;
+    }
+
+    /* Badge */
+    .badge {
+      margin: 1.5em 3em;
+      width: 6.4em;
+      height: 6.4em;
+      border-radius: 20%;
+      display: inline-block;
+      top: 0;
+      transition: all 0.2s ease;
+      box-shadow: 8px 10px 12px 3px rgba(0, 0, 0, 0.43);
+    }
+
+    .rounded {
+      width: 70px;
+      height: 70px;
+      background: white;
+      position: absolute;
+      margin: 15px 16px auto;
+      z-index: 10;
+      border-radius: 30%;
+      box-shadow: 8px 8px 8px 2px rgba(0, 0, 0, 0.23);
+    }
+    .rounded i.fab {
+      font-size: 2.6em;
+      margin-top: 16px;
+    }
+
+    </style>
+  </head>
+  <!-- npx tailwindcss -i ./src/input.css -o ./src/output.css --watch  -->
+  <body>
+    <div id="preloader">
+			<div id="container" class="container-preloader ">
+				<div class="animation-preloader">
+					<div class="spinner"></div>
+					<div class="txt-loading">
+
+         
+
+          
+  
+
+            
+            
+						<span preloader-text="F" class="characters">F</span>
+						
+						<span preloader-text="A" class="characters">A</span>
+						
+						<span preloader-text="I" class="characters">I</span>
+						
+						<span preloader-text="Z" class="characters">A</span>
+						
+						<span preloader-text="A" class="characters">A</span>
+						
+						<span preloader-text="N" class="characters">N</span>
+            
+						
+						
+					</div>
+				</div>	
+				<div class="loader-section section-left"></div>
+				<div class="loader-section section-right"></div>
+			</div>
+		</div>	
+
+    <header class="relative z-10">
+      <nav class="flex  justify-between text-black w-full fixed bg-black bg-opacity-50 ">
+        <div class="px-5 md:px-[90px] py-6 flex w-full items-center  ">
+          <a class="text-3xl font-bold font-heading " >
+            <img
+              class="md:h-[28px] h-8"
+              src="asset/logo1.png"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              data-aos-easing="linear"
+              alt="logo"
+            />
+          </a>
+          <!-- Nav Links -->
+          <ul
+            class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12"
+          >
+            <li>
+              <a
+                class="sphere hover:text-red-400 text-fuchsia-50"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+                data-aos-easing="linear"
+                href="#"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="sphere hover:text-red-400 text-fuchsia-50"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+                data-aos-easing="linear"
+                href="#about"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                class="sphere hover:text-red-400 text-fuchsia-50"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+                data-aos-easing="linear"
+                href="#technologies"
+                >Technologies</a
+              >
+            </li>
+            <li>
+              <a
+                class="sphere hover:text-red-400 text-fuchsia-50"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+                data-aos-easing="linear"
+                href="#profile" 
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+
+          <!-- Header Icons -->
+
+          <div
+            class="hidden xl:flex items-center space-x-5"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-easing="linear"
+          >
+            <a
+              class="flex sphere items-center text-fuchsia-100 hover:text-red-400"
+              href="#"
+            >
+              <i class="fa-sharp fa-solid fa-moon fa-2xl"></i>
+            </a>
+            <a
+              class="sphere flex items-center text-fuchsia-100 hover:text-red-400"
+              href="#"
+            >
+              <i class="fa-brands fa-instagram fa-2xl"></i>
+            </a>
+            <!--Instagram / Register      -->
+            <a
+              class="flex sphere items-center text-fuchsia-100 hover:text-red-400"
+              href="#"
+            >
+              <i class="fa-brands fa-facebook fa-2xl"></i>
+            </a>
+          </div>
+        </div>
+        <!-- Responsive navbar -->
+
+        <a
+          class="xl:hidden md:hidden self-center mr-12 text-fuchsia-100 mobile-menu-button btn"
+          
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </a>
+      </nav>
+      <ul
+        class="list hidden  w-full h-[25vh] top-20 space-y-4 z-10 text-center justify-evenly flex-col text-2xl md:hidden text-white bg-black bg-opacity-90 fixed"
+      >
+        <li><a href="#" class="sphere hover:text-orange-600 mt-8">Home</a></li>
+        <li><a href="#about" class="sphere hover:text-orange-600">About</a></li>
+        <li><a href="#technologies" class="sphere hover:text-orange-600">Technologies</a></li>
+        <li>
+          <a href="#profile" class="sphere hover:text-orange-600"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+    </header>
+    <section class= "md:h-screen w-full md:bg-image bg-image1  bg-cover">
+      <div class="container w-full h-full flex  ">
+        <div class="  flex flex-col md:pl-24 md:w-1/2 md:mt-16 md:h-screen py-28 px-12 md:px-0 md:py-0 items-start text-start justify-center bg-green gap-4">
+          
+          
+            <h1
+              class="  md:text-2xl text-xl font-bold  text-fuchsia-100"
+              data-aos="fade-right"data-aos-duration="2500" data-aos-easing="linear">
+              Hello,it's<span class="text-red-600">Me</span>
+            </h1>
+            <p
+              class="md:text-[50px]   text-4xl  font-bold text-fuchsia-100 "
+              data-aos="fade-right" data-aos-duration="2500" data-aos-easing="linear">
+              MOHAMMAD FAIZAN AHMAD
+            </p>
+            <p
+              class="md:text-[34px] text-[23px]   font-semibold  text-fuchsia-100 "
+              data-aos="fade-right" data-aos-duration="2500" data-aos-easing="linear">
+             I am A <span class="text-red-600">Web Devloper/Designer</span>
+            </p>
+            <p
+              class="   md:block   hidden text-[20px]   font-normal  text-fuchsia-100 "
+              data-aos="fade-right"data-aos-duration="2500" data-aos-easing="linear">
+              <a href="" class="text-white mr-8 hover:underline-offset-8 underline hover:text-gray-400 "> UI/UX</a>
+              <a href=""class="text-white mr-8 hover:underline-offset-8 hover:text-gray-400 underline">Designing</a>
+              <a href=""class="text-white mr-8 hover:underline-offset-8 hover:text-gray-400 underline">Developing</a>
+              <a href=""class="text-white mr-8 hover:underline-offset-8 hover:text-gray-400 underline">Editing</a>
+            </p>
+              <br />
+              <p class="  flex   text-xl gap-4 " data-aos="fade-right"data-aos-duration="2500" data-aos-easing="linear">
+              <a href=""><i class="fa-brands fa-linkedin fa-xl  text-white sphere hover:text-red-600"></i></a>
+              <a href=""><i class="fa-brands  fa-github fa-xl  text-white sphere hover:text-red-600"></i></a> 
+              <a href="">
+
+                <i class="fa-regular fa-bounce fa-envelope fa-xl  text-white sphere hover:text-red-600" ></i></a>
+            </p>
+            <br />
+            <div class="flex gap-8">
+            <a href="" class="flex  " >
+              <button class=" bg-fuchsia-100  text-black font-bold px-[28px]  py-[12px]  md:top-[290px] top-[810px] left-12 hover:bg-red-500 hover:text-white "data-aos="fade-right" data-aos-duration="3000" data-aos-easing="linear" >Hire me!</button>
+            </a>
+            <a href="" class="flex  " >
+              <button class=" bg-red-600  text-white font-bold px-[26px] py-2  md:top-[290px] top-[810px] left-52 hover:bg-fuchsia-50 hover:text-black "data-aos="fade-right" data-aos-duration="3000" data-aos-easing="linear" >Download CV</button>
+            </a>
+          </div>
+          
+            </p>
+        </div>
+       
+      </div>
+    </section>
+    <hr class="md:mx-60 mx-8 ">
+    <section id="about" class="text-gray-600 h-1/2 body-font  overflow-hidden bg-black ">
+      <div
+        class="container mx-auto flex md:px-60 md:h-[60vh]  md:flex-row flex-col items-center"
+      >
+        <div class="lg:max-w-lg h-[50vh] w-5/6 md:w-1/2 mb-10 md:mb-0 mt-8 md:mt-0 ">
+          <img
+            class="object-cover object-center md:h-[50vh]    md:mt-0 mt-8 shadow-2xl  rounded-xl  hover:shadow-red-500"
+            
+            alt="hero"
+            src="asset/about.png"
+          />
+        </div>
+        <div
+          class="lg:flex-grow md:w-1/2 lg:pl-24 h-[50vh] py-8 rounded-xl md:pl-16 flex flex-col md:items-start md:text-left items-center text-center "
+          data-aos="fade-left"data-aos-duration="2500" data-aos-easing="linear">
+          <h1
+            class="title-font sm:text-4xl text-3xl mb-4 font-semibold text-white"
+          >
+            ABOUT Me
+          </h1>
+          <p class="mb-8 leading-relaxed text-white w-2/3 md:w-full">
+            As a recent graduate with a degree in Computer Science, I am a highly motivated and passionate developer eager to kickstart my career in the tech industry. With a solid understanding of various programming languages, including Java, Python, and JavaScript, I have developed a strong foundation in software development.
+          </p>
+          <div class="flex justify-center">
+            <button
+              class="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-500  text-lg"
+            >
+              My Work
+            </button>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="md:mx-60 my-8 mx-8">
+    <section id="work" class="sectoin3  justify-center items-center text-center">
+      <h1 class="text-white h-[20vh] text-5xl font-bold mt-16 "> My Services
+        <br>
+        <p class="text-white text-xl font-normal mt-4">We work with you, <span class="text-red-500">Not for you</span></p>
+      </h1>
+     
+     
+     <!-- end about -->
+        
+        <div class="content md:mb-12">
+           <!-- card -->
+           <div class="card shadow-lg shadow-white hover:shadow-red-500">
+              
+                 <div class="icon"><i class="fa-duotone fa-solid fa-mobile fa-2xl"></i></div>
+                 <p class="title">Designing</p>
+                 <p class="text"> I have hands-on experience in branding, UI/UX, and digital illustration. . <br>
+                 <button class="text  bg-red-500 text-white px-2 py-2 text-xl hover:bg-indigo-600">
+                  Read More
+                 </button>
+                </p>
+              
+           </div>
+           <!-- end card -->
+           <!-- card -->
+           <div class="card shadow-lg shadow-white hover:shadow-red-500">
+              
+                 <div class="icon"><i class="fa-sharp fa-solid fa-code fa-2xl"></i></div>
+                 <p class="title">Developer</p>
+                 <p class="text">"I am a recent Computer Science graduate with a passion for coding and problem-solving.  <br>
+                  <button class="text bg-red-500 text-white px-2 py-2 text-xl hover:bg-indigo-600">
+                    Read More
+                   </button>
+                 </p>
+              
+           </div>
+           <!-- end card -->
+           <!-- card -->
+           <div class="card shadow-lg shadow-white hover:shadow-red-500">
+              
+                 <div class="icon">
+                  <i class="fa-sharp fa-solid fa-wand-magic-sparkles fa-2xl"></i></div>
+                 <p class="title">Editing</p>
+                 <p class="text">"I am a recent graduate with a passion for editing and refining content.  <br>
+                  <button class="text  bg-red-500 text-white px-2 py-2 text-xl hover:bg-indigo-600 ">
+                    Read More
+                   </button>
+                 </p>
+              
+           </div>
+           <!-- end card -->
+        
+     
+        
+        </div>
+     </div>
+     
+     
+    </section>
+    <hr class="md:mx-60 my-8 mx-8">
+    <section id="technologies" class="w-full justify-center items-center text-center ">
+      <div class="justify-center text-center items-center h-[20vh]">
+        <h1 class="text-white font-semibold md:text-5xl text-2xl mt-40">MY LANGUAGES <span class="text-red-600">/</span> TECHNOLOGIES </h1>
+       
+        <h5 class="text-yellow-500 md:px-20 px-12 mt-4 md:mt-8 md:text-xl">
+           Here i describe my Language and technologies that are Html, Css, Java-Script, Adobe, Php, Node, CoreJava, Python etc
+        </h5>
+      </div>
+      <div class="wrappers bg-transparent md:w-[50%] w-full">
+        <article class="badge bg-orange-500 text-orange-500">
+          <div class="rounded"><i class="fab fa-html5"></i></div>
+        </article>
+        <article class="badge bg-blue-500 text-blue-500">
+          <div class="rounded"><i class="fab fa-css3-alt"></i></div>
+        </article>
+        <article class="badge bg-yellow-500 text-yellow-500">
+          <div class="rounded"><i class="fab fa-js-square"></i></div>
+        </article>
+        
+        <article class="badge bg-red-600 text-red-600">
+          <div class="rounded"><i class="fab fa-brands fa-git-alt"></i></div>
+        </article>
+     
+        <article class="badge bg-purple-500 text-purple-500">
+          <div class="rounded"><i class="fab fa-brands fa-laravel"></i></div>
+        </article>
+        <article class="badge bg-green-500 text-green-500">
+          <div class="rounded"><i class="fab fa-brands fa-figma" style="color: #1ba622;"></i></i></div>
+        </article>
+
+        <article class="badge bg-yellow-600 text-sky-700">
+          <div class="rounded"><i class="fab fa-python"></i></div>
+        </article>
+
+        <article class="badge bg-red-800 text-red-800">
+          <div class="rounded"><i class="fab fa-java"></i></div>
+        </article>
+      </div>
+    </section>
+    <hr class="md:mx-60 my-8 mx-8">
+    <section id="profile" class="text-gray-600 h-1/2 body-font  overflow-hidden md:mt-40 ">
+      <div
+        class="container mx-auto flex md:px-60 md:h-[60vh]  md:flex-row flex-col items-center"
+      >
+        <div class="lg:max-w-lg md:h-[50vh] h-[60vh] mt-20 md:mt-0   md:w-1/2 items-center  flex md:flex-row flex-col">
+          <div class="flex flex-col h-[20vh] md:w-1/3" >
+            <a href="" class="text-5xl md:text-6xl flex  hover:text-red-500 text-white"><i class="fa-brands fa-behance fa-xl"></i></a>
+
+<p class="flex text-white text-2xl mt-16"> Behance</p> 
+          </div>
+          <div class="flex flex-col h-[20vh] md:w-1/3">
+            
+<a href="" class="text-5xl md:text-6xl flex  hover:text-red-500 text-white"><i class="fa-brands fa-dribbble fa-xl"></i></a>
+<p class="flex text-white text-2xl mt-16 "> Deribble</p> 
+          </div>
+          <div class="flex flex-col h-[20vh] md:w-1/3">
+            <a href="" class="text-5xl md:text-6xl flex  hover:text-red-500 text-white"><i class="fa-brands fa-upwork fa-xl "></i></a>
+<p class="flex text-white text-2xl mt-16 md:ml-4">UPwork</p>
+          </div>
+        </div>
+        <div
+          class="lg:flex-grow md:w-1/2 lg:pl-24 h-[50vh] py-8 rounded-xl md:pl-16 flex flex-col   md:text-left md:items-start text-center "
+          data-aos="fade-left"data-aos-duration="2500" data-aos-easing="linear">
+          <h1
+            class="title-font sm:text-4xl text-3xl mb-4 font-semibold text-white "
+          >
+            PROFILE
+          </h1>
+          <a href="" class="text-xl text-red-500 hover:text-yellow-500 font-medium underline cursor-pointer ">Hire me</a>
+          <p class="mt-4 leading-relaxed text-white md:px-0 px-8">
+            "As a recent graduate with a dual passion for design and development, I bring a unique blend of creativity and technical expertise. Proficient in graphic design tools like Adobe Creative Suite and Figma, as well as programming languages such as JavaScript, HTML, and CSS, I am equipped to create visually appealing and highly functional digital experiences. My academic projects and internships have honed my skills in UI/UX design, web development, and problem-solving.
+          </p>
+          
+        </div>
+      </div>
+    </section>
+    <hr class="md:mx-60 my-8 mx-8">
+    <footer class="relative mt-20 pt-8 pb-6">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap text-left lg:text-left">
+          <div class="w-full lg:w-6/12 px-4">
+            <h4 class="text-3xl fonat-semibold text-yellow-500">Let's keep in touch!</h4>
+            <h5 class="text-lg mt-0 mb-2 text-white">
+              Find us on any of these platforms, we respond 1-2 business days.
+            </h5>
+            <div class="mt-6 lg:mb-0 mb-6">
+              <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                <i class="fab fa-twitter sphere"></i></button><button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                <i class="fab fa-facebook-square  sphere"></i></button><button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                <i class="fab fa-dribbble sphere"></i></button><button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                <i class="fab fa-github sphere"></i>
+              </button>
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="flex flex-wrap items-top mb-6">
+              <div class="w-full lg:w-4/12 px-4 ml-auto">
+                <span class="block uppercase text-yellow-500 text-sm font-semibold mb-2">Useful Links</span>
+                <ul class="list-unstyled">
+                  <li>
+                    <a class=" text-white font-semibold block pb-2 text-sm hover:text-red-500" href="https://www.creative-tim.com/presentation?ref=njs-profile">About Us</a>
+                  </li>
+                  <li>
+                    <a class=" text-white font-semibold block pb-2 text-sm hover:text-red-500" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
+                  </li>
+                  <li>
+                    <a class=" text-white font-semibold block pb-2 text-sm hover:text-red-500" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
+                  </li>
+                  <li>
+                    <a class="text-white hover:text-blueGray-800 font-semibold block pb-2 text-sm hover:text-red-500" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-full lg:w-4/12 px-4">
+                <span class="block uppercase text-yellow-500 text-sm font-semibold mb-2">Other Resources</span>
+                <ul class="list-unstyled">
+                  <li>
+                    <a class="text-white  font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">MIT License</a>
+                  </li>
+                  <li>
+                    <a class="text-white  font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">Terms &amp; Conditions</a>
+                  </li>
+                  <li>
+                    <a class="text-white font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a class="text-white  font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-6 border-blueGray-300">
+        <div class="flex flex-wrap items-center md:justify-between justify-center">
+          <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+            <div class="text-sm text-yellow-500 font-semibold py-1">
+              Copyright © <span id="get-current-year">2021</span><a href="https://www.creative-tim.com/product/notus-js" class="text-blueGray-500 hover:text-gray-800" target="_blank"> Notus JS by
+              <a href="https://www.creative-tim.com?ref=njs-profile" class="text-blueGray-500 hover:text-blueGray-800">Creative Mohammad Faizan Ahmad</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <!-- here use java scripts -->
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerBtn = document.querySelector(".btn");
+        hamburgerBtn.addEventListener("click", function () {
+          const dropdownMenu = document.querySelector(".list");
+          dropdownMenu.classList.toggle("hidden");
+        });
+      });
+     
+    </script>
+    <script>
+      $(document).ready(function() {
+  setTimeout(function() {
+    $('#container').addClass('loaded');
+    // Once the container has finished, the scroll appears
+    if ($('#container').hasClass('loaded')) {
+      // It is so that once the container is gone, the entire preloader section is deleted
+      $('#preloader').delay(2000).queue(function() {
+        $(this).remove();
+      });}
+  }, 2000);});
+
+    </script>
+  </body>
+</html>
