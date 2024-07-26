@@ -954,24 +954,16 @@ video {
   height: 60vh;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-\[62vh\] {
   height: 62vh;
 }
 
-.h-\[52vh\] {
-  height: 52vh;
-}
-
-.h-\[65vh\] {
-  height: 65vh;
-}
-
 .h-\[67vh\] {
   height: 67vh;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-10 {
@@ -3303,6 +3295,10 @@ body {
 @media (min-width: 1024px) {
   .lg\:mb-0 {
     margin-bottom: 0px;
+  }
+
+  .lg\:h-\[62vh\] {
+    height: 62vh;
   }
 
   .lg\:w-4\/12 {
