@@ -966,6 +966,14 @@ video {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.h-\[63vh\] {
+  height: 63vh;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -3105,6 +3113,10 @@ body {
 }
 
 @media (min-width: 640px) {
+  .sm\:h-\[62vh\] {
+    height: 62vh;
+  }
+
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
