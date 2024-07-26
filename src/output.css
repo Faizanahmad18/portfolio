@@ -2071,6 +2071,10 @@ video {
   background-color: rgb(202 138 4 / var(--tw-bg-opacity));
 }
 
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
+}
+
 .bg-opacity-90 {
   --tw-bg-opacity: 0.9;
 }
@@ -2944,11 +2948,11 @@ video {
 }
 
 .bg-image {
-  background-image: url("../asset/backgroundss.jpg");
+  background-image: url("../asset/background.jpg");
 }
 
 .bg-image1 {
-  background-image: url("../asset/backgroundsss.jpg");
+  background-image: url("../asset/backgrounds.jpg");
 }
 
 body {
@@ -3288,7 +3292,7 @@ body {
   }
 
   .md\:bg-image {
-    background-image: url("../asset/backgroundss.jpg");
+    background-image: url("../asset/background.jpg");
   }
 }
 
