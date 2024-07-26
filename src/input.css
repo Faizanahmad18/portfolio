@@ -3,10 +3,10 @@
 @tailwind utilities;
 @layer utilities {
   .bg-image {
-    background-image: url("../asset/background.jpg");
+    background-image: url("../asset/backgroundss.jpg");
   }
   .bg-image1 {
-    background-image: url("../asset/backgroundn.jpg");
+    background-image: url("../asset/backgroundsss.jpg");
   }
 
   body {
